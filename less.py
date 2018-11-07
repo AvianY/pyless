@@ -89,7 +89,7 @@ class Piece:
         pygame.draw.circle(self.DISPLAY, self.color, (self.xcor,self.ycor), self.rad)
 
     def pointOnPiece(self, xcor, ycor):
-        return (math.sqrt(xcor^2+ycor^2) < self.rad)
+        return math.sqrt((xcor - self.xcor)**2+(ycor - self.ycor)**2) < self.rad
 
 def main():
     pygame.init()
@@ -123,6 +123,15 @@ def main():
             if event.type==QUIT:
                 pygame.quit()
                 sys.exit()
+            if event.type==KEYDOWN:
+                if event.key==K_q:
+                    pygame.quit()
+                    sys.exit()
+            if event.type==MOUSEMOTION:
+                position = event.pos
+            if event.type==MOUSEBUTTONDOWN:
+                if piece.pointOnPiece(position[0],position[1]):
+                    print("on piece")
         pygame.display.update()
 
 main()

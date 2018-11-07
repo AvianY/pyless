@@ -1,9 +1,9 @@
 import pygame, sys, os, copy
 import random as rnd
+import math
 
 from pygame.locals import *
 from roundrects import round_rect # https://github.com/Mekire/rounded-rects-pygame/blob/master/example.py
-from math import ceil
 
 white=(255,255,255)
 grey=(220,220,220)
@@ -17,8 +17,8 @@ statusX = 100
 gameSIDE = 900
 dX = gameSIDE + statusX
 dY = gameSIDE
-bSIDE = ceil(gameSIDE/3)
-bSEG = ceil(bSIDE/2)
+bSIDE = math.ceil(gameSIDE/3)
+bSEG = math.ceil(bSIDE/2)
 
 # 1. usmerjenost (-1 = horizontalno, 1 = vertikalno)  
 # 2. pozicija v mat. smislu (-1 = levo/dol, 0 = sredina, 1 = desno/gor)  
@@ -82,6 +82,8 @@ class Piece:
     def drawPiece(self):
         pygame.draw.circle(self.DISPLAY, self.color, (self.xcor,self.ycor), self.rad)
 
+    def pointOnPiece(self, xcor, ycor):
+        return (math.sqrt(xcor^2+ycor^2) < self.rad)
 
 def main():
     pygame.init()

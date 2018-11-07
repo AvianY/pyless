@@ -86,7 +86,7 @@ def main():
     DISPLAY.fill(white)
 
     field = [ [Block(DISPLAY, x, y,
-                     rnd.choice(wall_configurations), rnd.randrange(0,4))
+                     copy.deepcopy(rnd.choice(wall_configurations)), rnd.randrange(0,4))
                for x in range(3)] for y in range(3) ]
     for row in field:
         for block in row:

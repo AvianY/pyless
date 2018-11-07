@@ -63,7 +63,6 @@ class Block:
             pygame.draw.line(self.DISPLAY, blue, [prex, prey], [postx, posty], 10)
 
     def rotateBlock(self, cw_rotation):
-        cw_rotation = 0
         for iter in range(0,cw_rotation):
             for segment in self.walls:
                 segment[1] = segment[0]*segment[1]

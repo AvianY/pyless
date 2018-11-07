@@ -69,6 +69,16 @@ class Block:
                 segment[2] = -segment[0]*segment[2]
                 segment[0] = -segment[0] # spremenimo na koncu, ker ostala dva zavisita od njega v trenutnem stanju
 
+class Piece:
+    def __init__(self, DISPLAY, startpos):
+        self.DISPLAY = DISPLAY
+        self.pos = startpos # pos je sestavljen iz y,x koord. bloka ter y,x koord v bloku
+
+    def drawPiece(self):
+        xpos = int(self.pos[0]*bSIDE + self.pos[2]*bSEG + bSEG/2)
+        ypos = int(self.pos[1]*bSIDE + self.pos[3]*bSEG + bSEG/2)
+        pygame.draw.circle(self.DISPLAY, khaki, (xpos,ypos), int(bSEG*1/3))
+
 def main():
     pygame.init()
 
@@ -81,6 +91,10 @@ def main():
     for row in field:
         for block in row:
             block.drawBlock()
+
+    piece = Piece(DISPLAY, [0,0,0,0] )
+    piece.drawPiece()
+
 
     while True:
         for event in pygame.event.get():

@@ -33,14 +33,20 @@ bTopLeft =     [ [ 1,-1,-1 ], [-1, 0,-1 ] ]
 bTopRight =    [ [ 1, 0,-1 ], [-1, 0, 1 ] ]
 bBottomRight = [ [ 1, 0, 1 ], [-1, 1, 1 ] ]
 
-wall_configurations = ( bFullSide,
-                       bHalfSide,
-                       bZigZag,
-                       bT_Block,
-                       bTopLeft,
-                       bTopRight,
-                       bBottomRight)
+class Walls:
+    def __init__(self, wall_list):
+        self.walls = wall_list
+        if sum([nwall[1] for nwall in self.walls] )<9:
+            raise ValueError("Total number of availible wall configurations must be greater than total number of used blocks")
 
+
+    def getRandWall(self):
+        chosenWall = rnd.choice(self.walls)
+        while chosenWall[1]==0:
+            chosenWall = rnd.choice(self.walls)
+
+        chosenWall[1] = chosenWall[1]-1
+        return copy.deepcopy(chosenWall[0])
 
 class Block:
     def __init__(self, DISPLAY, xpos, ypos, walls, rotation):
@@ -91,8 +97,18 @@ def main():
     DISPLAY=pygame.display.set_mode((dX,dY))
     DISPLAY.fill(white)
 
+    wall_configurations = [ [bFullSide, 1],
+                           [bHalfSide, 1],
+                           [bZigZag, 2],
+                           [bT_Block, 1],
+                           [bTopLeft, 2],
+                           [bTopRight, 2],
+                           [bBottomRight,3]]
+
+    walls = Walls(wall_configurations)
+
     field = [ [Block(DISPLAY, x, y,
-                     copy.deepcopy(rnd.choice(wall_configurations)), rnd.randrange(0,4))
+                     walls.getRandWall(), rnd.randrange(0,4))
                for x in range(3)] for y in range(3) ]
     for row in field:
         for block in row:

@@ -7,7 +7,8 @@ from math import ceil
 
 white=(255,255,255)
 grey=(220,220,220)
-grey1=(190,190,190)
+grey1=(248,248,248)
+grey2=(190,190,190)
 blue=(0,0,255)
 khaki=(240,230,140)
 brown=(165,41,41)
@@ -50,9 +51,9 @@ class Block:
         self.rotateBlock(rotation)
 
     def drawBlock(self):
-        round_rect(self.DISPLAY, [self.xcor, self.ycor, bSIDE, bSIDE], grey, ceil(bSIDE/10), 3)
-        pygame.draw.line(self.DISPLAY, grey1, [self.xcor + bSEG, self.ycor], [self.xcor + bSEG, self.ycor + bSIDE], 3)
-        pygame.draw.line(self.DISPLAY, grey1, [self.xcor, self.ycor + bSEG], [self.xcor + bSIDE, self.ycor + bSEG], 3)
+        round_rect(self.DISPLAY, [self.xcor, self.ycor, bSIDE, bSIDE], grey, math.ceil(bSIDE/10), 3, grey1)
+        pygame.draw.line(self.DISPLAY, grey2, [self.xcor + bSEG, self.ycor], [self.xcor + bSEG, self.ycor + bSIDE], 3)
+        pygame.draw.line(self.DISPLAY, grey2, [self.xcor, self.ycor + bSEG], [self.xcor + bSIDE, self.ycor + bSEG], 3)
         for segment in self.walls:
             vert = int((segment[0] + 1)/2)
             hor = 1 - vert
@@ -70,14 +71,17 @@ class Block:
                 segment[0] = -segment[0] # spremenimo na koncu, ker ostala dva zavisita od njega v trenutnem stanju
 
 class Piece:
-    def __init__(self, DISPLAY, startpos):
+    def __init__(self, DISPLAY, startpos, color, radius):
         self.DISPLAY = DISPLAY
         self.pos = startpos # pos je sestavljen iz y,x koord. bloka ter y,x koord v bloku
+        self.xcor = int(self.pos[0]*bSIDE + self.pos[2]*bSEG + bSEG/2)
+        self.ycor = int(self.pos[1]*bSIDE + self.pos[3]*bSEG + bSEG/2)
+        self.color = color
+        self.rad = radius
 
     def drawPiece(self):
-        xpos = int(self.pos[0]*bSIDE + self.pos[2]*bSEG + bSEG/2)
-        ypos = int(self.pos[1]*bSIDE + self.pos[3]*bSEG + bSEG/2)
-        pygame.draw.circle(self.DISPLAY, khaki, (xpos,ypos), int(bSEG*1/3))
+        pygame.draw.circle(self.DISPLAY, self.color, (self.xcor,self.ycor), self.rad)
+
 
 def main():
     pygame.init()
@@ -92,7 +96,7 @@ def main():
         for block in row:
             block.drawBlock()
 
-    piece = Piece(DISPLAY, [0,0,0,0] )
+    piece = Piece(DISPLAY, [0,0,0,0], khaki, int(bSEG/3) )
     piece.drawPiece()
 
 

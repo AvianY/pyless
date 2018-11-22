@@ -1,0 +1,84 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/45968eff/
+Bdistance	objects.py	/^def Bdistance( Bpos1, Bpos2 ):$/;"	f	access:public	signature:( Bpos1, Bpos2 )
+Block	objects.py	/^class Block:$/;"	c	inherits:	access:public
+Block.__init__	objects.py	/^    def __init__(self, DISPLAY, xpos, ypos, walls, rotation):$/;"	m	class:Block	access:public	signature:(self, DISPLAY, xpos, ypos, walls, rotation)
+Block.drawBlock	objects.py	/^    def drawBlock(self):$/;"	m	class:Block	access:public	signature:(self)
+Block.getPosition	objects.py	/^    def getPosition(self, xcor, ycor):$/;"	m	class:Block	access:public	signature:(self, xcor, ycor)
+Block.pointOn	objects.py	/^    def pointOn(self, xcor, ycor):$/;"	m	class:Block	access:public	signature:(self, xcor, ycor)
+Block.rotateBlock	objects.py	/^    def rotateBlock(self, cw_rotation):$/;"	m	class:Block	access:public	signature:(self, cw_rotation)
+Piece	objects.py	/^class Piece:$/;"	c	inherits:	access:public
+Piece.__init__	objects.py	/^    def __init__(self, DISPLAY, startpos, color, radius):$/;"	m	class:Piece	access:public	signature:(self, DISPLAY, startpos, color, radius)
+Piece.changePosition	objects.py	/^    def changePosition(self, newpos):$/;"	m	class:Piece	access:public	signature:(self, newpos)
+Piece.drawPiece	objects.py	/^    def drawPiece(self):$/;"	m	class:Piece	access:public	signature:(self)
+Piece.getPosition	objects.py	/^    def getPosition(self):$/;"	m	class:Piece	access:public	signature:(self)
+Piece.isSelected	objects.py	/^    def isSelected(self):$/;"	m	class:Piece	access:public	signature:(self)
+Piece.pointOn	objects.py	/^    def pointOn(self, xcor, ycor):$/;"	m	class:Piece	access:public	signature:(self, xcor, ycor)
+Piece.setSelected	objects.py	/^    def setSelected(self):$/;"	m	class:Piece	access:public	signature:(self)
+Piece.toggleSelected	objects.py	/^    def toggleSelected(self):$/;"	m	class:Piece	access:public	signature:(self)
+Piece.unsetSelected	objects.py	/^    def unsetSelected(self):$/;"	m	class:Piece	access:public	signature:(self)
+Walls	objects.py	/^class Walls:$/;"	c	inherits:	access:public
+Walls.__init__	objects.py	/^    def __init__(self, wall_list):$/;"	m	class:Walls	access:public	signature:(self, wall_list)
+Walls.getRandWall	objects.py	/^    def getRandWall(self):$/;"	m	class:Walls	access:public	signature:(self)
+__init__	objects.py	/^    def __init__(self, DISPLAY, startpos, color, radius):$/;"	m	class:Piece	access:public	signature:(self, DISPLAY, startpos, color, radius)
+__init__	objects.py	/^    def __init__(self, DISPLAY, xpos, ypos, walls, rotation):$/;"	m	class:Block	access:public	signature:(self, DISPLAY, xpos, ypos, walls, rotation)
+__init__	objects.py	/^    def __init__(self, wall_list):$/;"	m	class:Walls	access:public	signature:(self, wall_list)
+_aa_render_region	roundrects.py	/^def _aa_render_region(image, rect, color, rad):$/;"	f	access:protected	signature:(image, rect, color, rad)
+_render_region	roundrects.py	/^def _render_region(image, rect, color, rad):$/;"	f	access:protected	signature:(image, rect, color, rad)
+aa_round_rect	roundrects.py	/^def aa_round_rect(surface, rect, color, rad=20, border=0, inside=(0,0,0)):$/;"	f	access:public	signature:(surface, rect, color, rad=20, border=0, inside=(0,0,0))
+bBottomRight	init.py	/^bBottomRight = [ [ 1, 0, 1 ], [-1, 1, 1 ] ]$/;"	v	access:public
+bFullSide	init.py	/^bFullSide =    [ [ 1,-1,-1 ], [ 1,-1, 1 ] ]$/;"	v	access:public
+bHalfSide	init.py	/^bHalfSide =    [ [ 1,-1, 1 ] ]$/;"	v	access:public
+bSEG	init.py	/^bSEG = m.ceil(bSIDE\/2)$/;"	v	access:public
+bSIDE	init.py	/^bSIDE = m.ceil(gameSIDE\/3)$/;"	v	access:public
+bT_Block	init.py	/^bT_Block=      [ [ 1,-1,-1 ], [ 1,-1, 1 ], [-1, 0,-1] ]$/;"	v	access:public
+bTopLeft	init.py	/^bTopLeft =     [ [ 1,-1,-1 ], [-1, 0,-1 ] ]$/;"	v	access:public
+bTopRight	init.py	/^bTopRight =    [ [ 1, 0,-1 ], [-1, 0, 1 ] ]$/;"	v	access:public
+bZigZag	init.py	/^bZigZag =      [ [ 1,-1,-1 ], [-1, 0, -1], [1, 0, 1] ]$/;"	v	access:public
+blue	init.py	/^blue=(0,0,255)$/;"	v	access:public
+brown	init.py	/^brown=(160,82,45)$/;"	v	access:public
+changePosition	objects.py	/^    def changePosition(self, newpos):$/;"	m	class:Piece	access:public	signature:(self, newpos)
+dX	init.py	/^dX = gameSIDE + statusX$/;"	v	access:public
+dY	init.py	/^dY = gameSIDE$/;"	v	access:public
+drawBlock	objects.py	/^    def drawBlock(self):$/;"	m	class:Block	access:public	signature:(self)
+drawPiece	objects.py	/^    def drawPiece(self):$/;"	m	class:Piece	access:public	signature:(self)
+flat	objects.py	/^def flat(table):$/;"	f	access:public	signature:(table)
+gameSIDE	init.py	/^gameSIDE = 900$/;"	v	access:public
+getPosition	objects.py	/^    def getPosition(self):$/;"	m	class:Piece	access:public	signature:(self)
+getPosition	objects.py	/^    def getPosition(self, xcor, ycor):$/;"	m	class:Block	access:public	signature:(self, xcor, ycor)
+getRandWall	objects.py	/^    def getRandWall(self):$/;"	m	class:Walls	access:public	signature:(self)
+green	init.py	/^green=(173,255,47)$/;"	v	access:public
+grey	init.py	/^grey=(220,220,220)$/;"	v	access:public
+grey1	init.py	/^grey1=(248,248,248)$/;"	v	access:public
+grey2	init.py	/^grey2=(190,190,190)$/;"	v	access:public
+isOrthogonal	objects.py	/^def isOrthogonal(Bpos1, Bpos2):$/;"	f	access:public	signature:(Bpos1, Bpos2)
+isSelected	objects.py	/^    def isSelected(self):$/;"	m	class:Piece	access:public	signature:(self)
+khaki	init.py	/^khaki=(240,230,140)$/;"	v	access:public
+m	init.py	/^import math as m$/;"	I	access:public
+m	less.py	/^import math as m$/;"	I	access:public
+m	objects.py	/^import math as m$/;"	I	access:public
+main	less.py	/^def main():$/;"	f	access:public	signature:()
+onObj	objects.py	/^def onObj(objs, xcor, ycor):$/;"	f	access:public	signature:(objs, xcor, ycor)
+pg	roundrects.py	/^import pygame as pg$/;"	I	access:public
+piece_radius	init.py	/^piece_radius = int(bSEG\/4)$/;"	v	access:public
+pointOn	objects.py	/^    def pointOn(self, xcor, ycor):$/;"	m	class:Block	access:public	signature:(self, xcor, ycor)
+pointOn	objects.py	/^    def pointOn(self, xcor, ycor):$/;"	m	class:Piece	access:public	signature:(self, xcor, ycor)
+putPiece	objects.py	/^def putPiece(mp, pieces, field, pcs_pos):$/;"	f	access:public	signature:(mp, pieces, field, pcs_pos)
+rnd	objects.py	/^import random as rnd$/;"	I	access:public
+rotateBlock	objects.py	/^    def rotateBlock(self, cw_rotation):$/;"	m	class:Block	access:public	signature:(self, cw_rotation)
+round_rect	roundrects.py	/^def round_rect(surface, rect, color, rad=20, border=0, inside=(0,0,0,0)):$/;"	f	access:public	signature:(surface, rect, color, rad=20, border=0, inside=(0,0,0,0))
+selectPiece	objects.py	/^def selectPiece(mp, pieces, field):$/;"	f	access:public	signature:(mp, pieces, field)
+selectedPiece	objects.py	/^def selectedPiece(pieces):$/;"	f	access:public	signature:(pieces)
+setSelected	objects.py	/^    def setSelected(self):$/;"	m	class:Piece	access:public	signature:(self)
+statusX	init.py	/^statusX = 100$/;"	v	access:public
+toggleSelected	objects.py	/^    def toggleSelected(self):$/;"	m	class:Piece	access:public	signature:(self)
+unsetSelected	objects.py	/^    def unsetSelected(self):$/;"	m	class:Piece	access:public	signature:(self)
+validPosition	objects.py	/^def validPosition(Bpos, PCSpos, pieces, field):$/;"	f	access:public	signature:(Bpos, PCSpos, pieces, field)
+wall_configurations	init.py	/^wall_configurations = [[bFullSide, 1],$/;"	v	access:public
+wall_thickness	init.py	/^wall_thickness = int(bSEG\/5)$/;"	v	access:public
+white	init.py	/^white=(255,255,255)$/;"	v	access:public
